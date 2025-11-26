@@ -56,19 +56,11 @@ terraform apply
 
 ---
 
-## Recommendations for Screenshots
-- Docker containers running (`docker ps`)
-- Backend app responding to requests
-- Nginx proxy working
-- Terraform apply output (Docker & Kubernetes)
-- k3d node list
-
----
-
 ## Reflection
 See `Reflection.md` for a summary of lessons learned and future directions.
 
 
+## Screenshots
 ![alt text](image.png)
 ![alt text](image-1.png)
 ![alt text](image-2.png)
