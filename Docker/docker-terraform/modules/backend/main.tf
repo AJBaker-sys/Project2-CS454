@@ -1,3 +1,5 @@
+# Terraform main configuration for backend Docker module
+
 resource "docker_image" "flask" {
   name = "flask-backend-prod:latest"
   

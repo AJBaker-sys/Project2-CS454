@@ -1,3 +1,4 @@
+# Terraform version constraints for network Docker module
 terraform {
   required_providers {
     docker = {

@@ -1,3 +1,5 @@
+# Terraform variables for backend Docker module
+
 variable "network_name" {
   type = string
 }

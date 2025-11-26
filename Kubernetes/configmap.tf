@@ -1,3 +1,5 @@
+# Terraform configmap for Kubernetes resources
+
 resource "kubernetes_config_map" "demo_config" {
   metadata {
     name      = "demo-config"

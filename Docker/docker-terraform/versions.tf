@@ -1,3 +1,5 @@
+# Terraform version constraints for Docker resources
+
 terraform {
   required_providers {
     docker = {

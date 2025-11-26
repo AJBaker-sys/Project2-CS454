@@ -1,3 +1,5 @@
+# Terraform deployment for Kubernetes resources
+
 resource "kubernetes_deployment" "app" {
   metadata {
     name      = "demo-app"

@@ -1,3 +1,5 @@
+# Nginx Dockerfile for reverse proxy
+
 FROM nginx:alpine
 
 # Add curl for independent healthcheck

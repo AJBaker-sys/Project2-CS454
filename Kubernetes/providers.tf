@@ -1,3 +1,5 @@
+# Terraform providers for Kubernetes resources
+
 terraform {
   required_providers {
     kubernetes = {

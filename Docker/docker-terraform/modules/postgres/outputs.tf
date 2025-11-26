@@ -1,3 +1,5 @@
+# Terraform outputs for postgres Docker module
+
 output "container_id" {
     value = docker_container.postgres.id
 }

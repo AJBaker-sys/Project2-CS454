@@ -1,3 +1,5 @@
+# Terraform service for Kubernetes resources
+
 resource "kubernetes_service" "app" {
   metadata {
     name      = "demo-service"

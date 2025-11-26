@@ -1,3 +1,5 @@
+# Terraform main configuration for frontend Docker module
+
 resource "docker_image" "frontend" {
   name = "nginx-prod:latest"
 

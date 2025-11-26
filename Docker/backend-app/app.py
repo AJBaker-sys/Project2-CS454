@@ -1,3 +1,9 @@
+"""
+Backend Application
+------------------
+A simple Python app for demonstration purposes.
+"""
+
 from flask import Flask, jsonify
 import os
 import psycopg2

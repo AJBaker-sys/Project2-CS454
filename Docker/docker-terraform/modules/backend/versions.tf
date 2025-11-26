@@ -1,3 +1,4 @@
+# Terraform version constraints for backend Docker module
 terraform {
   required_providers {
     docker = {

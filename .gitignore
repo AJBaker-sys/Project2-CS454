@@ -20,3 +20,7 @@ docker-compose.override.yml
 # IDE
 .vscode/
 .idea/
+
+# Kube configs (if accidentally copied)
+kubeconfig
+.kube/

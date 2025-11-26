@@ -1,3 +1,5 @@
+# Terraform variables for postgres Docker module
+
 variable "network_name" {
   type = string
 }

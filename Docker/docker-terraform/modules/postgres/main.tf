@@ -1,3 +1,5 @@
+# Terraform main configuration for postgres Docker module
+
 resource "docker_volume" "postgres_data" {
   name = "postgres_data_prod"
 }
