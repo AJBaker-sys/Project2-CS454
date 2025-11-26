@@ -51,7 +51,7 @@ def index():
         conn.close()
         
         return jsonify({
-            "message": "Hello from production-grade Flask backend!",
+            "message": "Welcome to Project2-Cs454 Terraform Backend!",
             "visits": visits,
             "status": "healthy"
         })
