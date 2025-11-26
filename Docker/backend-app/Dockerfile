@@ -1,6 +1,3 @@
-## Dockerfile for Backend App
-# Builds a Python Flask app container
-
 FROM python:3.12-slim
 
 LABEL maintainer="ajb0101@uah.edu"

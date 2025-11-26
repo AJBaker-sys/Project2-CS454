@@ -17,32 +17,15 @@ This repository demonstrates containerization and orchestration using Docker and
 
 ## Running the Docker Project
 
-### 1. Build and Run Backend App
-```bash
-cd Docker/backend-app
-# Build Docker image
-docker build -t backend-app .
-# Run container
-docker run -d -p 5000:5000 backend-app
-```
-
-### 2. Nginx Reverse Proxy
-```bash
-cd Docker/configs
-# Build Nginx image
-docker build -t custom-nginx -f Dockerfile.nginx .
-# Run Nginx container
-docker run -d -p 80:80 custom-nginx
-```
-
 ### 3. Terraform Docker Infrastructure
 ```bash
 cd Docker/docker-terraform
 terraform init
 terraform apply
-```
 
----
+When done run:
+terraform destroy
+```
 
 ## Running the Kubernetes Project (with k3d)
 
@@ -69,7 +52,7 @@ terraform apply
 - **Implemented:** Added Nginx reverse proxy for backend app to improve scalability and security.
 
 ### Kubernetes Enhancement
-- **To Add:** *(Leave a note here for your enhancement, e.g., implement Horizontal Pod Autoscaler, add persistent storage, or integrate monitoring with Prometheus.)*
+- **Implemented:** Added a ConfigMap to inject environment variables into the backend Deployment, improving configuration management and flexibility.
 
 ---
 
@@ -78,10 +61,17 @@ terraform apply
 - Backend app responding to requests
 - Nginx proxy working
 - Terraform apply output (Docker & Kubernetes)
-- k3d cluster status (`k3d cluster list`)
-- Kubernetes dashboard or `kubectl get all` output
+- k3d node list
 
 ---
 
 ## Reflection
 See `Reflection.md` for a summary of lessons learned and future directions.
+
+
+![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
+![alt text](image-3.png)
+![alt text](image-4.png)
+![alt text](image-5.png)
