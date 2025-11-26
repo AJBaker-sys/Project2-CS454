@@ -1,0 +1,14 @@
+# Terraform
+**/.terraform/
+**/.terraform.lock.hcl
+**/*.tfstate
+**/*.tfstate.*
+**/*.tfvars
+!.terraform.tfvars.example
+**/*.tfplan
+
+*.log
+.vscode/
+/test-bin/
+
+
