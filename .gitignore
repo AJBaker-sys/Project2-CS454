@@ -1,0 +1,22 @@
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+
+# Local files
+*.log
+*.pyc
+__pycache__/
+
+# Docker
+docker-compose.override.yml
+*.tar
+
+# kubeconfig
+.kube/
+.kubeconfig
+
+# IDE
+.vscode/
+.idea/
