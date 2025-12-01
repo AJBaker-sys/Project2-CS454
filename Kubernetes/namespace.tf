@@ -1,7 +1,8 @@
 # Terraform namespace for Kubernetes resources
 
-resource "kubernetes_namespace" "demo" {
+# namespace used for the project application
+resource "kubernetes_namespace" "project2_app" {
   metadata {
-    name = "demo"
+    name = "project2-app"
   }
 }

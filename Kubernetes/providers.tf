@@ -10,5 +10,6 @@ terraform {
 }
 
 provider "kubernetes" {
+  # uses local kubeconfig by default; change path for CI or different contexts
   config_path = "~/.kube/config"
 }

@@ -1,9 +1,10 @@
 # Terraform deployment for Kubernetes resources
 
+# deploy a simple nginx pod for the project app
 resource "kubernetes_deployment" "app" {
   metadata {
-    name      = "demo-app"
-    namespace = kubernetes_namespace.demo.metadata[0].name
+    name      = "project2-app"
+    namespace = kubernetes_namespace.project2_app.metadata[0].name
   }
 
   spec {
@@ -11,20 +12,20 @@ resource "kubernetes_deployment" "app" {
 
     selector {
       match_labels = {
-        app = "demo"
+        app = "project2-app"
       }
     }
 
     template {
       metadata {
         labels = {
-          app = "demo"
+          app = "project2-app"
         }
       }
 
       spec {
         container {
-          name  = "demo"
+          name  = "project2-app"
           image = "nginx:latest"
 
           port {

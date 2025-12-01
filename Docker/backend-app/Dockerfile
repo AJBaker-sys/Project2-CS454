@@ -5,6 +5,7 @@ LABEL version="1.0"
 
 WORKDIR /app
 
+# Copy Python dependency manifest and install packages as a non-root user
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt \
     && adduser --disabled-password --gecos "" appuser \

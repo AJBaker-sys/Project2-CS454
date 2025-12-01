@@ -48,11 +48,27 @@ terraform apply
 ---
 
 ## Enhancements
-### Docker Enhancement
-- **Implemented:** Added Nginx reverse proxy for backend app to improve scalability and security.
+### Docker Terraform Project — Enhancement(s)
 
-### Kubernetes Enhancement
-- **Implemented:** Added a ConfigMap to inject environment variables into the backend Deployment, improving configuration management and flexibility.
+- **Nginx reverse-proxy frontend:** A custom Nginx image/config in `Docker/configs/` acts as the frontend and reverse-proxy to the backend. The frontend is exposed on `localhost:8080` via the `docker-terraform/modules/frontend` module (meets the "expose frontend on localhost:8080" requirement).
+
+- **Healthchecks for containers:** Backend and Nginx images include `HEALTHCHECK` instructions and the Terraform Docker modules declare container `healthcheck` blocks (`Docker/backend-app/Dockerfile`, `Docker/configs/Dockerfile.nginx`, and `docker-terraform/modules/*`). This improves readiness detection for local orchestration.
+
+- **Secrets & passwords handled safely:** Postgres credentials are generated with the `random_password` resource and passed to modules as variables instead of being hard-coded (`docker-terraform/main.tf` and `modules/postgres`). This satisfies the requirement to pass secrets via variables/TFVARS (you can also supply `.tfvars`).
+
+- **Module per component & custom network:** The Docker Terraform project is modularized with `network`, `postgres`, `backend`, and `frontend` modules under `Docker/docker-terraform/modules/`, and a custom Docker network is created and used (`modules/network`).
+
+These items together satisfy the Docker project requirements (modules per component, use of `docker_image`/`docker_container`/`docker_network`, secret passing via TF, frontend exposure, and a custom network) and the explicit enhancement is the Nginx reverse proxy + supporting healthchecks and secret handling.
+
+### Kubernetes Terraform Project — Enhancement(s)
+
+- **ConfigMap for configuration:** A `kubernetes_config_map` in `Kubernetes/configmap.tf` provides externalized configuration (MESSAGE) that can be injected into pods, improving configuration management and allowing runtime changes without rebuilding images.
+
+- **Complete app stack (Namespace / Deployment / Service):** The project creates a Namespace, Deployment, and Service (`Kubernetes/namespace.tf`, `Kubernetes/deployment.tf`, `Kubernetes/service.tf`) for `project2-app`, meeting the required Kubernetes resources. The provider is configured to use a local kubeconfig for k3d/kind (`Kubernetes/providers.tf`).
+
+The ConfigMap is the explicit enhancement for the Kubernetes project (beyond the baseline Namespace/Deployment/Service), making configuration flexible and separate from code.
+
+If you'd like, I can also add short README snippets showing the exact files and commands to inspect or change each enhancement (for example: `kubectl -n project2-app get configmap project2-config -o yaml`).
 
 ---
 

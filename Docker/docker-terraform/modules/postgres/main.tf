@@ -9,6 +9,7 @@ resource "docker_container" "postgres" {
   image = "postgres:16-alpine"
   
   env = [
+    # set Postgres boot-time env and DB name
     "POSTGRES_PASSWORD=${var.postgres_password}",
     "POSTGRES_DB=app_db",
     "PGDATA=/var/lib/postgresql/data/pgdata"
@@ -24,6 +25,7 @@ resource "docker_container" "postgres" {
   }
 
   healthcheck {
+    # use pg_isready to verify Postgres is accepting connections
     test     = ["CMD-SHELL", "pg_isready -U postgres -d app_db"]
     interval = "10s"
     timeout  = "5s"

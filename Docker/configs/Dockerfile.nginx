@@ -5,7 +5,8 @@ FROM nginx:alpine
 # Add curl for independent healthcheck
 RUN apk add --no-cache curl
 
-# Copy our production config
+# Copy our config
+## copy custom nginx config into container
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Independent healthcheck (doesn't depend on backend being up)

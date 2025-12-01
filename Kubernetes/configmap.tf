@@ -1,12 +1,13 @@
 # Terraform configmap for Kubernetes resources
 
-resource "kubernetes_config_map" "demo_config" {
+# simple configmap used by the project app; keep values small and static here
+resource "kubernetes_config_map" "project2_config" {
   metadata {
-    name      = "demo-config"
-    namespace = kubernetes_namespace.demo.metadata[0].name
+    name      = "project2-config"
+    namespace = kubernetes_namespace.project2_app.metadata[0].name
   }
 
   data = {
-    MESSAGE = "Hello from Terraform"
+    MESSAGE = "Hello how are you!
   }
 }

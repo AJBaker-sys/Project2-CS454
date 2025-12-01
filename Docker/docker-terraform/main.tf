@@ -1,5 +1,6 @@
 # Terraform main configuration for Docker resources
 
+# generate a strong password for the Postgres container
 resource "random_password" "postgres" {
   length           = 24
   special          = true

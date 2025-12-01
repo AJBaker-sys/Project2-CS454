@@ -1,14 +1,15 @@
 # Terraform service for Kubernetes resources
 
-resource "kubernetes_service" "app" {
+# ClusterIP service exposing the project app internally
+resource "kubernetes_service" "project2_service" {
   metadata {
-    name      = "demo-service"
-    namespace = kubernetes_namespace.demo.metadata[0].name
+    name      = "project2-service"
+    namespace = kubernetes_namespace.project2_app.metadata[0].name
   }
 
   spec {
     selector = {
-      app = "demo"
+      app = "project2-app"
     }
 
     port {

@@ -4,7 +4,7 @@ terraform {
   required_providers {
     docker = {
       source  = "kreuzwerker/docker"
-      version = "3.0.2"  # pin exact version
+      version = "3.0.2" # pin exact version
     }
     random = {
       source  = "hashicorp/random"

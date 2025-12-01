@@ -4,6 +4,7 @@ resource "docker_image" "frontend" {
   name = "nginx-prod:latest"
 
   build {
+    # build the nginx image using local `configs` folder
     context    = abspath("${path.root}/../configs")
     dockerfile = "Dockerfile.nginx"
     platform   = "linux/amd64"
