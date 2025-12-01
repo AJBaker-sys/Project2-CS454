@@ -64,10 +64,6 @@ terraform apply
 
 - **Complete app stack (Namespace / Deployment / Service):** The project creates a Namespace, Deployment, and Service (`Kubernetes/namespace.tf`, `Kubernetes/deployment.tf`, `Kubernetes/service.tf`) for `project2-app`, meeting the required Kubernetes resources. The provider is configured to use a local kubeconfig for k3d/kind (`Kubernetes/providers.tf`).
 
-The ConfigMap is the explicit enhancement for the Kubernetes project (beyond the baseline Namespace/Deployment/Service), making configuration flexible and separate from code.
-
-If you'd like, I can also add short README snippets showing the exact files and commands to inspect or change each enhancement (for example: `kubectl -n project2-app get configmap project2-config -o yaml`).
-
 ---
 
 ## Reflection
