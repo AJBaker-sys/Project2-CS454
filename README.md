@@ -43,7 +43,6 @@ terraform apply
 
 ### 3. Access Services
 - Use `kubectl get svc -n <namespace>` to find service endpoints.
-- Port-forward or expose as needed.
 
 ---
 
