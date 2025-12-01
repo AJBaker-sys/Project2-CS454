@@ -58,8 +58,6 @@ terraform apply
 
 - **Module per component & custom network:** The Docker Terraform project is modularized with `network`, `postgres`, `backend`, and `frontend` modules under `Docker/docker-terraform/modules/`, and a custom Docker network is created and used (`modules/network`).
 
-These items together satisfy the Docker project requirements (modules per component, use of `docker_image`/`docker_container`/`docker_network`, secret passing via TF, frontend exposure, and a custom network) and the explicit enhancement is the Nginx reverse proxy + supporting healthchecks and secret handling.
-
 ### Kubernetes Terraform Project — Enhancement(s)
 
 - **ConfigMap for configuration:** A `kubernetes_config_map` in `Kubernetes/configmap.tf` provides externalized configuration (MESSAGE) that can be injected into pods, improving configuration management and allowing runtime changes without rebuilding images.
